@@ -4,8 +4,19 @@ const cases = {
     title: "Web 3 / Trading Protection",
     type: "Webpage / Animation Effect / 3D",
     summary: "围绕 Web3 交易平台首页进行视觉与交互设计探索，以深色科技感和高对比产品叙事为核心，通过 3D 资产、行情信息、产品入口和转化路径的组合，塑造更专业、可信且具有沉浸感的交易平台体验。",
+    detailIntro: [
+      "该项目源于真实 Web3 交易平台首页视觉设计项目。作品集版本对品牌信息、具体业务数据、页面内容及部分视觉资产进行了脱敏处理，并在保留原项目设计逻辑与视觉方法的基础上，重新整理为可公开展示的 Demo 版本。",
+      "项目围绕交易平台首页的品牌展示、用户增长与营销转化场景展开，重点覆盖首页 Hero 动效、核心视觉氛围搭建、三维数字资产表现、动态 Banner 资源位设计，以及下方多个运营模块的视觉延展。通过高质感 3D 元素、动态币种视觉、深色科技金融界面语言与模块化资源位设计，强化平台的专业感、未来感与数字资产交易氛围。",
+      "在项目执行中，我参与了从视觉方向定义、首页主视觉设计、动效方案制作，到营销资源位延展与多模块适配的完整流程。作品集版本在不展示真实商业信息的前提下，保留了项目中的核心设计思路，包括 Web3 金融产品的视觉调性建立、动效节奏控制、三维资产应用、运营资源位系统化延展，以及面向增长转化的页面视觉组织方式。",
+      "该项目重点体现了我在 Web3 / Fintech 场景下，将品牌视觉、动效表达、三维资产与营销运营需求结合的综合设计能力。商业项目设计逻辑完整，在交易平台类产品中的具备视觉搭建、动态化设计与营销设计延展。",
+    ],
     mediaType: "page",
     src: "./web3/index.html",
+    extraImages: [
+      "./sucai/KV/KV1/1-2.png",
+      "./sucai/KV/KV1/1-3.png",
+    ],
+    detailIntro: null,
     focus: "Web3 Launch / Hero Narrative",
   },
   "web3-kv2": {
@@ -16,11 +27,25 @@ const cases = {
     mediaType: "gallery",
     src: [
       "./sucai/KV/KV1-2/1.png",
+      "./sucai/KV/KV1-2/1-2.png",
+      "./sucai/KV/KV1-2/1-3.png",
       "./sucai/KV/KV1-2/2.png",
     ],
     focus: "Campaign System / Product Visual",
   },
   "web3-kv3": {
+    index: "01",
+    title: "Web 3 / AI Design Assistant",
+    type: "Webpage / Animation Effect / 3D",
+    summary: "围绕 AI 设计助手机器人 IP 展开的产品视觉与界面设计探索，覆盖角色形象、功能模块展示、移动端页面结构与信息层级表达。通过统一的深色科技氛围与机器人角色语言，强化 AI 辅助设计场景下的专业感、亲和力与产品识别度。",
+    mediaType: "gallery",
+    src: [
+      "./sucai/KV/NSFW-KV3/1.png",
+      "./sucai/KV/NSFW-KV3/2.png",
+    ],
+    focus: "Product Visual / AI Assistant IP",
+  },
+  "web3-kv4": {
     index: "01",
     title: "Web 3 / Cloud Competition",
     type: "Webpage / Animation Effect / 3D",
@@ -114,7 +139,7 @@ const cases = {
     type: "AI Workflow Demonstration",
     summary: "AIGC 辅助 Web3 活动视觉资产生成项目，展示了从硬币资产生成、材质探索、三维组合到最终 KV 应用的完整流程。通过 AI 与 3D 工作流结合，提升前期概念验证、视觉方向测试和后期批量延展的效率。",
     mediaType: "gallery",
-    heroVideo: "./sucai/video/Part3/3-kv1_batch.mp4",
+    heroVideo: "./sucai/video/Part3/KV1.mp4",
     src: [
       "./sucai/KV/KV3/1/1.png",
       "./sucai/KV/KV3/1/2.png",
@@ -128,7 +153,7 @@ const cases = {
           alt: "AIGC coin render process animation",
           style: {
             left: "56.3%",
-            top: "calc(43% - 100px)",
+            top: "calc(43% - 40px)",
             width: "200px",
           },
         },
@@ -137,7 +162,7 @@ const cases = {
           alt: "AIGC coin render glow",
           style: {
             left: "74.2%",
-            top: "calc(43% - 119px)",
+            top: "calc(43% - 49px)",
             width: "17.2%",
           },
         },
@@ -145,8 +170,8 @@ const cases = {
           src: "./sucai/KV/KV3/1/合成.gif",
           alt: "AIGC render process animation",
           style: {
-            left: "calc(11.5% - 40px)",
-            top: "calc(43% - 100px)",
+            left: "calc(11.5% - 50px)",
+            top: "calc(43% - 40px)",
             width: "200px",
           },
         },
@@ -193,6 +218,14 @@ const params = new URLSearchParams(window.location.search);
 const currentCaseKey = cases[params.get("case")] ? params.get("case") : "web3-kv1";
 const currentCase = cases[currentCaseKey];
 const returnUrl = `./index.html?check=2&case=${encodeURIComponent(currentCaseKey)}`;
+const assetVersion = "20260725";
+const withAssetVersion = (src) => {
+  if (!src || /^(https?:|data:|blob:)/.test(src)) {
+    return src;
+  }
+
+  return `${src}${src.includes("?") ? "&" : "?"}v=${assetVersion}`;
+};
 
 document.querySelectorAll(".detail-brand, .detail-back, .detail-fixed-back").forEach((link) => {
   link.href = returnUrl;
@@ -205,6 +238,16 @@ document.getElementById("detailType").textContent = currentCase.type;
 document.getElementById("detailSummary").textContent = currentCase.summary;
 document.getElementById("detailFocus").textContent = currentCase.focus;
 
+const detailIntro = document.getElementById("detailIntro");
+
+if (detailIntro && currentCase.detailIntro) {
+  currentCase.detailIntro.forEach((paragraph) => {
+    const introParagraph = document.createElement("p");
+    introParagraph.textContent = paragraph;
+    detailIntro.append(introParagraph);
+  });
+}
+
 const mediaRoot = document.getElementById("detailMedia");
 
 if (currentCase.mediaType === "video") {
@@ -214,16 +257,23 @@ if (currentCase.mediaType === "video") {
   video.loop = true;
   video.playsInline = true;
   video.controls = true;
-  video.src = currentCase.src;
+  video.src = withAssetVersion(currentCase.src);
   mediaRoot.append(video);
 } else if (currentCase.mediaType === "page") {
   mediaRoot.classList.add("detail-media-page");
 
   const frame = document.createElement("iframe");
-  frame.src = currentCase.src;
+  frame.src = withAssetVersion(currentCase.src);
   frame.title = currentCase.title;
   frame.loading = "lazy";
   mediaRoot.append(frame);
+
+  (currentCase.extraImages || []).forEach((src, index) => {
+    const image = document.createElement("img");
+    image.src = withAssetVersion(src);
+    image.alt = `${currentCase.title} ${index + 1}`;
+    mediaRoot.append(image);
+  });
 } else if (currentCase.mediaType === "gallery") {
   mediaRoot.classList.add("detail-media-gallery");
 
@@ -234,14 +284,14 @@ if (currentCase.mediaType === "video") {
     video.loop = true;
     video.playsInline = true;
     video.controls = true;
-    video.src = currentCase.heroVideo;
+    video.src = withAssetVersion(currentCase.heroVideo);
     mediaRoot.append(video);
   }
 
   currentCase.src.forEach((src, index) => {
     const overlays = currentCase.overlays ? currentCase.overlays[index] : null;
     const image = document.createElement("img");
-    image.src = src;
+    image.src = withAssetVersion(src);
     image.alt = `${currentCase.title} ${index + 1}`;
 
     if (!overlays) {
@@ -256,7 +306,7 @@ if (currentCase.mediaType === "video") {
     overlays.forEach((overlay) => {
       const overlayImage = document.createElement("img");
       overlayImage.className = "detail-media-overlay";
-      overlayImage.src = overlay.src;
+      overlayImage.src = withAssetVersion(overlay.src);
       overlayImage.alt = overlay.alt || "";
 
       Object.entries(overlay.style || {}).forEach(([property, value]) => {
@@ -270,7 +320,7 @@ if (currentCase.mediaType === "video") {
   });
 } else {
   const image = document.createElement("img");
-  image.src = currentCase.src;
+  image.src = withAssetVersion(currentCase.src);
   image.alt = currentCase.title;
   mediaRoot.append(image);
 }

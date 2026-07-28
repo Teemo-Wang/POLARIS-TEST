@@ -10,7 +10,7 @@
     />
     <link rel="preload" as="video" href="./test/头图视频.mp4" type="video/mp4" />
     <link rel="stylesheet" href="./Teemo-project-showcase.css?v=20260729" />
-    <script src="./Teemo-project-media.js?v=20260729" defer></script>
+    <script src="./Teemo-project-media.js?v=20260729-2" defer></script>
   </head>
   <body>
     <header class="Teemo-site-header" aria-label="主导航">
@@ -33,6 +33,8 @@
           loop
           playsinline
           preload="auto"
+          fetchpriority="high"
+          data-Teemo-hero-video
           aria-hidden="true"
         >
           <source src="./test/头图视频.mp4" type="video/mp4" />

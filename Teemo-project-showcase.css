@@ -178,7 +178,8 @@ a {
 }
 
 .Teemo-project-video,
-.Teemo-project-block img {
+.Teemo-project-block img,
+.Teemo-project-extension img {
   display: block;
   width: 100%;
   height: auto;
@@ -190,6 +191,10 @@ a {
 
 .Teemo-project-video {
   background: #000;
+}
+
+.Teemo-project-extension {
+  margin: 0;
 }
 
 .Teemo-contact {
@@ -345,7 +350,8 @@ a.Teemo-contact-tile:focus-visible {
   }
 
   .Teemo-project-video,
-  .Teemo-project-block img {
+  .Teemo-project-block img,
+  .Teemo-project-extension img {
     border-radius: 16px;
   }
 

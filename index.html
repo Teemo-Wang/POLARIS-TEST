@@ -1,437 +1,147 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teemo Portfolio Demo</title>
+    <title>Teemo Portfolio — POLARIS PASS</title>
     <meta
       name="description"
-      content="Teemo Wang personal portfolio with selected projects, work experience and moving visual gallery."
+      content="Teemo 的 POLARIS PASS 视觉设计项目展示。"
     />
-    <script>
-      (() => {
-        const params = new URLSearchParams(window.location.search);
-        const hasReturnScroll = sessionStorage.getItem("teemo-detail-return-scroll") !== null;
-
-        if (params.get("check") === "2" && hasReturnScroll) {
-          document.documentElement.classList.add("is-restoring-detail-scroll");
-          document.documentElement.style.scrollBehavior = "auto";
-        }
-
-        if ("scrollRestoration" in window.history) {
-          window.history.scrollRestoration = "manual";
-        }
-      })();
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preload" as="image" href="./sucai/hero-bg.jpg" />
-    <link rel="stylesheet" href="./styles.css?v=20260527" />
+    <link rel="preload" as="video" href="./test/头图视频.mp4" type="video/mp4" />
+    <link rel="stylesheet" href="./Teemo-project-showcase.css?v=20260729" />
+    <script src="./Teemo-project-media.js?v=20260729" defer></script>
   </head>
   <body>
-    <div class="page-scanlight" aria-hidden="true">
-      <span class="scanlight-beam scanlight-beam-a"></span>
-      <span class="scanlight-beam scanlight-beam-b"></span>
-    </div>
-    <div class="ambient ambient-left"></div>
-    <div class="ambient ambient-right"></div>
-    <div class="ambient ambient-bottom"></div>
+    <header class="Teemo-site-header" aria-label="主导航">
+      <a class="Teemo-brand" href="#home" aria-label="返回首页">
+        <img src="./sucai/Logo.png" alt="TEEMO" />
+      </a>
+      <nav class="Teemo-site-nav" aria-label="页面导航">
+        <a href="#home">Home</a>
+        <a href="#project">Project Case</a>
+      </nav>
+      <a class="Teemo-header-chip" href="#project">VIEW PROJECT</a>
+    </header>
 
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="#home" aria-label="Teemo home">
-          <img src="./sucai/Logo.png" alt="TEEMO" />
+    <main>
+      <section class="Teemo-hero" id="home" aria-label="POLARIS PASS 项目头图">
+        <video
+          class="Teemo-hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="./test/头图视频.mp4" type="video/mp4" />
+        </video>
+        <a class="Teemo-scroll-cue" href="#project" aria-label="向下查看项目内容">
+          <span>SCROLL TO EXPLORE</span>
+          <i aria-hidden="true"></i>
         </a>
-        <nav class="site-nav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#work">Project Works</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a class="header-chip" href="#contact" data-wechat-trigger>CONTACT ME</a>
-      </header>
+      </section>
 
-      <main>
-        <section class="hero reveal" id="home">
-          <video class="hero-video is-active" autoplay muted playsinline preload="auto" aria-hidden="true" data-hero-loop-video>
-            <source src="./sucai/hero-kv-bitcoin-faststart.mp4" type="video/mp4" />
+      <section class="Teemo-project-content" id="project" aria-label="POLARIS PASS 项目内容">
+        <article class="Teemo-project-block" aria-label="第一组项目设计">
+          <video
+            class="Teemo-project-video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            data-Teemo-project-video
+            aria-label="POLARIS PASS 第一组动态设计"
+          >
+            <source src="./test/1.mp4" type="video/mp4" />
           </video>
-          <video class="hero-video" muted playsinline preload="auto" aria-hidden="true" data-hero-loop-video>
-            <source src="./sucai/hero-kv-bitcoin-faststart.mp4" type="video/mp4" />
+          <img
+            src="./test/1.png"
+            alt="POLARIS PASS 第一组桌面端与移动端设计说明"
+            loading="lazy"
+          />
+        </article>
+
+        <article class="Teemo-project-block" aria-label="第二组项目设计">
+          <video
+            class="Teemo-project-video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            data-Teemo-project-video
+            aria-label="POLARIS PASS 第二组卡盒动态设计"
+          >
+            <source src="./test/3.mp4" type="video/mp4" />
           </video>
-          <div class="hero-mark">
-            <p class="eyebrow">Portfolio 2026</p>
-            <div class="hero-signature">
-              <img class="hero-signature-image" src="./sucai/title.png" alt="Portfolio By Teemo Wang" />
-            </div>
-          </div>
+          <img
+            src="./test/2.png"
+            alt="POLARIS PASS 第二组桌面端与移动端设计说明"
+            loading="lazy"
+          />
+        </article>
 
-          <div class="hero-copy">
-            <p class="hero-kicker">UI / Visual / Growth Marketing Design</p>
-            <h1>
-              <span class="hero-title-main">Teemo</span>
-              <span class="hero-title-sub">Visual Designer</span>
-            </h1>
-            <p class="hero-text">UI design, brand image, IP creation and launch visuals for growth-driven products.</p>
-          </div>
+        <article class="Teemo-project-block" aria-label="第三组项目设计">
+          <video
+            class="Teemo-project-video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            data-Teemo-project-video
+            aria-label="POLARIS PASS 第三组手持卡片动态设计"
+          >
+            <source src="./test/2.mp4" type="video/mp4" />
+          </video>
+          <img
+            src="./test/3.png"
+            alt="POLARIS PASS 第三组桌面端与移动端设计说明"
+            loading="lazy"
+          />
+        </article>
+      </section>
 
-          <div class="hero-contact glass-card">
-            <div class="contact-pill">
-              <span class="contact-icon" aria-hidden="true">
-                <img src="./sucai/icon/E-mail.png" alt="" />
-              </span>
-              <strong>teeemowang@gmail.com</strong>
-            </div>
-            <div class="contact-pill">
-              <span class="contact-icon" aria-hidden="true">
-                <img src="./sucai/icon/tel.png" alt="" />
-              </span>
-              <strong>+86 151 3886 3889</strong>
-            </div>
-            <div class="contact-pill">
-              <span class="contact-icon" aria-hidden="true">
-                <img src="./sucai/icon/wechat.png" alt="" />
-              </span>
-              <strong>15138863889</strong>
-            </div>
-          </div>
-        </section>
+      <section class="Teemo-contact" id="contact" aria-label="联系方式">
+        <div class="Teemo-contact-grid">
+          <a class="Teemo-contact-tile" href="mailto:teeemowang@gmail.com">
+            <span class="Teemo-tile-icon" aria-hidden="true">
+              <img src="./sucai/icon/E-mail.png" alt="" />
+            </span>
+            <h2>Email</h2>
+            <p>teeemowang@gmail.com</p>
+          </a>
 
-        <section class="about reveal" id="about">
-          <div class="about-grid">
-            <article class="about-photo-stage glass-card">
-              <div class="photo-orbit photo-orbit-back"></div>
-              <div class="photo-orbit photo-orbit-front"></div>
-              <div class="profile-card profile-card-inline">
-                <div class="profile-photo"></div>
-              </div>
-            </article>
+          <a class="Teemo-contact-tile" href="tel:+8615138863889">
+            <span class="Teemo-tile-icon" aria-hidden="true">
+              <img src="./sucai/icon/tel.png" alt="" />
+            </span>
+            <h2>Phone</h2>
+            <p>+86 151 3886 3889</p>
+          </a>
 
-            <article class="intro-card glass-card">
-              <h3 class="about-title">
-                <img class="about-title-image" src="./sucai/about me.png" alt="About Me" />
-              </h3>
-              <p>
-                具备6年跨境用户增长与营销设计经验，熟悉欧美、中东、东南亚等全球化市场用户偏好。深度参与多个从 0-1 项目的调研、UI 搭建、视觉制作、营销延展与运营投放，并基于数据反馈持续优化转化表现。
-              </p>
-              <p>
-                擅长将动效、三维、AI 工作流应用于营销视觉与品牌资产建设，能够输出具备科技感、未来感和高传播性的 Web3 / Fintech 风格视觉方案。有web3头部交易所项目经历，对金属、玻璃、发光材质、未来科技感、数字金融感等视觉语言有较强把控能力，能够快速建立符合 Crypto、交易平台、数字钱包、会员权益、增长活动等场景的视觉体系。
-              </p>
-              <p>
-                熟悉 Lottie 动效规范，自研 Lottie 压缩工具，在保证流畅度的同时显著降低动效文件体积，提升线上加载效率。了解html、css等格式，高效与产品、前端对齐相应方案并实现落地。
-              </p>
-              <p>
-                具备较强的 AI 辅助创意生产与设计提效能力，可根据不同业务场景快速完成风格探索、KV 生成、素材延展与投放物料批量化产出。同时能结合codex、kiro等AI coding制作需求适用工具以提效。
-              </p>
-            </article>
+          <article class="Teemo-contact-tile">
+            <span class="Teemo-tile-icon" aria-hidden="true">
+              <img src="./sucai/icon/wechat.png" alt="" />
+            </span>
+            <h2>WeChat</h2>
+            <p>15138863889</p>
+          </article>
 
-          </div>
-        </section>
-
-        <section class="experience reveal" id="experience">
-          <div class="experience-stage">
-            <div class="experience-stack" aria-hidden="true">
-              <article class="stack-card layer-a">
-                <div class="stack-thumb"></div>
-                <div class="stack-copy">
-                  <strong>HELLO</strong>
-                  <span>Visual Designer</span>
-                </div>
-                <div class="stack-meta">
-                  <span>Timeline</span>
-                  <strong>2025.11 - Now</strong>
-                </div>
-                <div class="stack-bars">
-                  <i></i>
-                  <i></i>
-                </div>
-              </article>
-              <article class="stack-card layer-b">
-                <div class="stack-thumb"></div>
-                <div class="stack-copy">
-                  <strong>WORK</strong>
-                  <span>Brand / UI / Growth</span>
-                </div>
-                <div class="stack-meta">
-                  <span>Status</span>
-                  <strong>Expanded on View</strong>
-                </div>
-                <div class="stack-bars">
-                  <i></i>
-                  <i></i>
-                </div>
-              </article>
-              <article class="stack-card layer-c">
-                <div class="stack-thumb"></div>
-                <div class="stack-copy">
-                  <strong>CARDS</strong>
-                  <span>Experience Preview</span>
-                </div>
-                <div class="stack-meta">
-                  <span>Mode</span>
-                  <strong>Floating Stack</strong>
-                </div>
-                <div class="stack-bars">
-                  <i></i>
-                  <i></i>
-                </div>
-              </article>
-            </div>
-
-            <div class="experience-grid">
-              <article class="experience-card is-accent">
-                <span class="experience-index">01</span>
-                <h3>SHEIN</h3>
-                <p>Campaign systems and launch visuals.</p>
-              </article>
-              <article class="experience-card">
-                <span class="experience-index">02</span>
-                <h3>Brand Studio</h3>
-                <p>Identity, landing pages and visual packaging.</p>
-              </article>
-              <article class="experience-card">
-                <span class="experience-index">03</span>
-                <h3>Commercial Lab</h3>
-                <p>Commercial content for conversion and retention.</p>
-              </article>
-              <article class="experience-card">
-                <span class="experience-index">04</span>
-                <h3>Visual System</h3>
-                <p>Reusable campaign layouts and update systems.</p>
-              </article>
-              <article class="experience-card">
-                <span class="experience-index">05</span>
-                <h3>AI Design</h3>
-                <p>Prompt-led concept exploration and image direction.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="works reveal" id="work">
-          <div class="section-headline section-headline-split section-headline-image">
-            <div class="section-title">
-              <p class="eyebrow">02 / Project Works</p>
-              <h2>
-                <img class="section-title-image" src="./sucai/project works.png" alt="Project Works" />
-              </h2>
-            </div>
-          </div>
-
-          <div class="work-list">
-            <article class="work-item work-feature glass-card">
-              <button class="work-row" type="button" aria-expanded="false">
-                <span class="work-index">01</span>
-                <span class="work-name">Web 3</span>
-                <span class="work-type">Webpage / Animation Effect / 3D</span>
-                <span class="work-arrow" aria-hidden="true"></span>
-              </button>
-              <div class="work-drawer">
-                <div class="work-kv work-kv-carousel" data-kv-carousel aria-label="Web 3 key visual carousel">
-                  <div class="work-kv-panel work-kv-panel-center work-kv-main work-kv-video" data-kv-panel data-detail-url="./work-detail.html?case=web3-kv1">
-                    <video autoplay muted loop playsinline aria-label="Web 3 project key visual 1">
-                      <source src="./sucai/video/KV1.mp4" type="video/mp4" />
-                    </video>
-                  </div>
-                  <div class="work-kv-panel work-kv-panel-right work-kv-image" data-kv-panel data-detail-url="./work-detail.html?case=web3-kv2">
-                    <img src="./sucai/video/KV2.png" alt="Web 3 project key visual 2" />
-                  </div>
-                  <div class="work-kv-panel work-kv-panel-left work-kv-image" data-kv-panel data-detail-url="./work-detail.html?case=web3-kv3">
-                    <img src="./sucai/KV/NSFW-KV3/cover.png" alt="Web 3 project key visual 3" />
-                  </div>
-                  <div class="work-kv-panel work-kv-image" data-kv-panel data-detail-url="./work-detail.html?case=web3-kv4">
-                    <img src="./sucai/video/KV3.png" alt="Web 3 project key visual 4" />
-                  </div>
-                  <button class="work-kv-nav work-kv-prev" type="button" aria-label="Previous Web 3 key visual"></button>
-                  <button class="work-kv-nav work-kv-next" type="button" aria-label="Next Web 3 key visual"></button>
-                </div>
-                <div class="work-detail">
-                  <p>Built a Web3 launch page system with hero narrative, visual hierarchy, and modular sections for fast campaign iteration.</p>
-                  <div class="work-tags">
-                    <span>Landing Page</span>
-                    <span>Product Visual</span>
-                    <span>Growth Assets</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="work-item work-feature glass-card">
-              <button class="work-row" type="button" aria-expanded="false">
-                <span class="work-index">02</span>
-                <span class="work-name">Brand Marketing</span>
-                <span class="work-type">Brand / IP</span>
-                <span class="work-arrow" aria-hidden="true"></span>
-              </button>
-              <div class="work-drawer">
-                <div class="work-kv work-kv-carousel" data-kv-carousel aria-label="Brand Marketing key visual carousel">
-                  <div class="work-kv-panel work-kv-panel-center work-kv-main work-kv-image" data-kv-panel data-detail-url="./work-detail.html?case=brand-kv1">
-                    <img src="./sucai/video/part2/KV1.png" alt="Brand Marketing key visual 1" />
-                  </div>
-                  <div class="work-kv-panel work-kv-panel-right work-kv-image" data-kv-panel data-detail-url="./work-detail.html?case=brand-kv2">
-                    <img src="./sucai/video/part2/KV2.png" alt="Brand Marketing key visual 2" />
-                  </div>
-                  <button class="work-kv-nav work-kv-prev" type="button" aria-label="Previous Brand Marketing key visual"></button>
-                  <button class="work-kv-nav work-kv-next" type="button" aria-label="Next Brand Marketing key visual"></button>
-                </div>
-                <div class="work-detail">
-                  <p>Designed campaign pages and social visuals that translate brand tone into reusable commercial templates.</p>
-                  <div class="work-tags">
-                    <span>Brand System</span>
-                    <span>Campaign Design</span>
-                    <span>Social Visual</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="work-item work-feature glass-card">
-              <button class="work-row" type="button" aria-expanded="false">
-                <span class="work-index">03</span>
-                <span class="work-name">AI Design</span>
-                <span class="work-type">AI Workflow Demonstration</span>
-                <span class="work-arrow" aria-hidden="true"></span>
-              </button>
-              <div class="work-drawer">
-                <div class="work-kv work-kv-carousel" data-kv-carousel aria-label="AI Design key visual carousel">
-                  <div class="work-kv-panel work-kv-panel-center work-kv-main work-kv-video" data-kv-panel data-detail-url="./work-detail.html?case=ai-kv1">
-                    <video autoplay muted loop playsinline preload="metadata" aria-label="AI Design key visual 1">
-                      <source src="./sucai/video/Part3/KV1.mp4" type="video/mp4" />
-                    </video>
-                  </div>
-                  <div class="work-kv-panel work-kv-panel-right work-kv-image" data-kv-panel data-detail-url="./work-detail.html?case=ai-kv2">
-                    <img src="./sucai/video/Part3/KV2.png" alt="AI Design key visual 2" />
-                  </div>
-                  <div class="work-kv-panel work-kv-panel-left work-kv-image" data-kv-panel data-detail-url="./work-detail.html?case=ai-kv3">
-                    <img src="./sucai/video/Part3/KV1.png" alt="AI Design key visual 3" />
-                  </div>
-                  <button class="work-kv-nav work-kv-prev" type="button" aria-label="Previous AI Design key visual"></button>
-                  <button class="work-kv-nav work-kv-next" type="button" aria-label="Next AI Design key visual"></button>
-                </div>
-                <div class="work-detail">
-                  <p>Explored AI-assisted concept design to speed up style exploration, mood validation and visual storytelling.</p>
-                  <div class="work-tags">
-                    <span>AI Concept</span>
-                    <span>Prompt Design</span>
-                    <span>Art Direction</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="gallery reveal" id="gallery">
-          <div class="section-headline section-headline-split section-headline-image">
-            <div class="section-title">
-              <p class="eyebrow">03 / Visual Exploration</p>
-              <h2>
-                <img class="section-title-image" src="./sucai/other Desings.png" alt="Other Designs" />
-              </h2>
-            </div>
-          </div>
-
-          <div class="gallery-mask">
-            <div class="gallery-scrollboard">
-              <div class="gallery-column gallery-column-a">
-                <div class="gallery-stack">
-                  <article class="masonry-card tall"><img src="./sucai/other/1ff8bd80-666b-4111-ab0a-14b9003dc02c.png" alt="Open metallic case filled with dark coins" /><span>COIN CASE</span></article>
-                  <article class="masonry-card square"><img src="./sucai/other/2.gif" alt="Animated cube surrounded by blue crypto coins" /><span>BLUE CUBE</span></article>
-                  <article class="masonry-card mid"><img src="./sucai/other/奖牌.png" alt="Silver trophy cup and coins on a glowing pedestal" /><span>MEDAL STAGE</span></article>
-                </div>
-                <div class="gallery-stack" aria-hidden="true">
-                  <article class="masonry-card tall"><img src="./sucai/other/1ff8bd80-666b-4111-ab0a-14b9003dc02c.png" alt="" /><span>COIN CASE</span></article>
-                  <article class="masonry-card square"><img src="./sucai/other/2.gif" alt="" /><span>BLUE CUBE</span></article>
-                  <article class="masonry-card mid"><img src="./sucai/other/奖牌.png" alt="" /><span>MEDAL STAGE</span></article>
-                </div>
-              </div>
-
-              <div class="gallery-column gallery-column-b">
-                <div class="gallery-stack">
-                  <article class="masonry-card tall"><img src="./sucai/other/image 3252.png" alt="Bitcoin and Solana coins flowing through a dark composition" /><span>COIN FLOW</span></article>
-                  <article class="masonry-card mid"><img src="./sucai/other/3.png" alt="Gold chip glowing above stacked technology platforms" /><span>GOLD CHIP</span></article>
-                  <article class="masonry-card tall"><img src="./sucai/other/青蛙改弹小提琴 (1) (1).png" alt="Over the Garden Wall style band scene with frogs and children" /><span>GARDEN WALL</span></article>
-                </div>
-                <div class="gallery-stack" aria-hidden="true">
-                  <article class="masonry-card tall"><img src="./sucai/other/image 3252.png" alt="" /><span>COIN FLOW</span></article>
-                  <article class="masonry-card mid"><img src="./sucai/other/3.png" alt="" /><span>GOLD CHIP</span></article>
-                  <article class="masonry-card tall"><img src="./sucai/other/青蛙改弹小提琴 (1) (1).png" alt="" /><span>GARDEN WALL</span></article>
-                </div>
-              </div>
-
-              <div class="gallery-column gallery-column-c">
-                <div class="gallery-stack">
-                  <article class="masonry-card tall"><img src="./sucai/other/image 3259.png" alt="Metal gift box filled with silver coins" /><span>TOKEN GIFT</span></article>
-                  <article class="masonry-card mid"><img src="./sucai/other/购物车.png" alt="Shopping cart filled with dark crypto coins" /><span>CART FLOW</span></article>
-                </div>
-                <div class="gallery-stack" aria-hidden="true">
-                  <article class="masonry-card tall"><img src="./sucai/other/image 3259.png" alt="" /><span>TOKEN GIFT</span></article>
-                  <article class="masonry-card mid"><img src="./sucai/other/购物车.png" alt="" /><span>CART FLOW</span></article>
-                </div>
-              </div>
-
-              <div class="gallery-column gallery-column-d">
-                <div class="gallery-stack">
-                  <article class="masonry-card tall"><img src="./sucai/other/shopping.png" alt="Shopping basket packed with metallic gift boxes and coins" /><span>SHOPPING SET</span></article>
-                  <article class="masonry-card square"><img src="./sucai/other/保险箱视角4-仰视 (1).png" alt="Floating metallic safe surrounded by coins" /><span>VAULT SAFE</span></article>
-                </div>
-                <div class="gallery-stack" aria-hidden="true">
-                  <article class="masonry-card tall"><img src="./sucai/other/shopping.png" alt="" /><span>SHOPPING SET</span></article>
-                  <article class="masonry-card square"><img src="./sucai/other/保险箱视角4-仰视 (1).png" alt="" /><span>VAULT SAFE</span></article>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="contact reveal" id="contact">
-          <div class="contact-top">
-            <p class="eyebrow">04 / Thank You</p>
-            <h2 class="thank-title">
-              <img class="thank-title-image" src="./sucai/Thank you.png" alt="Thank You" />
-            </h2>
-          </div>
-
-          <div class="contact-grid">
-            <article class="contact-tile glass-card">
-              <span class="tile-icon" aria-hidden="true">
-                <img src="./sucai/icon/E-mail.png" alt="" />
-              </span>
-              <h3>Email</h3>
-              <p>teeemowang@gmail.com</p>
-            </article>
-            <article class="contact-tile glass-card">
-              <span class="tile-icon" aria-hidden="true">
-                <img src="./sucai/icon/tel.png" alt="" />
-              </span>
-              <h3>Phone</h3>
-              <p>+86 151 3886 3889</p>
-            </article>
-            <article class="contact-tile glass-card" data-wechat-trigger>
-              <span class="tile-icon" aria-hidden="true">
-                <img src="./sucai/icon/wechat.png" alt="" />
-              </span>
-              <h3>WeChat</h3>
-              <p>15138863889</p>
-            </article>
-            <a class="contact-tile contact-red glass-card" href="https://www.xiaohongshu.com/user/profile/5b6e77b1f7e8b9731d7cbdd1" target="_blank" rel="noopener noreferrer">
-              <span class="tile-icon" aria-hidden="true">
-                <img src="./sucai/icon/red.png" alt="" />
-              </span>
-              <h3>RED</h3>
-              <p>xiaohongshu.com</p>
-            </a>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <script src="./script.js"></script>
+          <a
+            class="Teemo-contact-tile"
+            href="https://www.xiaohongshu.com/user/profile/5b6e77b1f7e8b9731d7cbdd1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="Teemo-tile-icon" aria-hidden="true">
+              <img src="./sucai/icon/red.png" alt="" />
+            </span>
+            <h2>RED</h2>
+            <p>xiaohongshu.com</p>
+          </a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
